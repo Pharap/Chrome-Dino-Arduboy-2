@@ -198,7 +198,7 @@ void loop() {
   // dino
   int dy = 40-d_jump;
   // tumbles!
-  if (d_tumble_t) {
+  if (d_tumble_t != 0) {
     arduboy.drawBitmap(0,dy+3,dino_tumble,30,18,WHITE);
   // runs!
   } else {
