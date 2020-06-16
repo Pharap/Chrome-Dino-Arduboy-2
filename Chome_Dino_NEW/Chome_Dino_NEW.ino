@@ -55,26 +55,9 @@ void reset()
   ox = 130;
 }
 
-void restart()
-{
-  reset();
-
-  arduboy.clear();
-  arduboy.setCursor(32, 20);
-  arduboy.println("Chrome Dino");
-  tinyfont.setCursor(49, 30);
-  tinyfont.print("v0.1.0");
-  arduboy.setCursor(18, 40);
-  arduboy.println("Press A To Start");
-  arduboy.display();
-  
-  while (!arduboy.pressed(A_BUTTON)) {}
-}
-
 void setup()
 {
   arduboy.begin();
-  restart();
 }
 
 void loop()
@@ -176,7 +159,6 @@ void oldLoop() {
     arduboy.print(d);
     arduboy.display();
     delay(2500);
-    restart();
     return;
     }
 
