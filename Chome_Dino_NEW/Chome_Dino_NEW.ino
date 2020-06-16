@@ -100,6 +100,8 @@ void loop()
       break;
 
     case GameState::GameOver:
+      updateGameOver();
+      drawGameOver();
       break;
   }
 
@@ -122,6 +124,23 @@ void drawTitleScreen()
 
   arduboy.setCursor(18, 40);
   arduboy.println("Press A To Start");
+}
+
+void updateGameOver
+{
+  if(arduboy.justPressed(A_BUTTON))
+  {
+    gameState = GameState::TitleScreen;
+  }
+}
+
+void drawGameOver
+{
+  arduboy.setCursor(35, 20);
+  arduboy.println("Game Over!");
+  arduboy.setCursor(40, 30);
+  arduboy.print("Score:");
+  arduboy.print(d);
 }
 
 void oldLoop() {
