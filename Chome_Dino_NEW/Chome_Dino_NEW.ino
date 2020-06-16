@@ -17,9 +17,6 @@ Arduboy2 arduboy;
 Tinyfont tinyfont = Tinyfont(arduboy.sBuffer, Arduboy2::width(), Arduboy2::height());
 ArduboyTones sound(arduboy.audio.enabled);
 
-//Menu stuff
-byte menu = 0;
-
 // frame counter
 unsigned int frame = 0;
 
