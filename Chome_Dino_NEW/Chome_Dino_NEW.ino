@@ -77,7 +77,34 @@ void setup()
   restart();
 }
 
-void loop() {
+void loop()
+{
+  if(!arduboy.nextFrame())
+    return;
+
+  arduboy.pollButtons();
+
+  arduboy.clear();
+
+  switch (gameState)
+  {
+    case GameState::TitleScreen:
+      break;
+
+    case GameState::CountDown:
+      break;
+
+    case GameState::Gameplay:
+      break;
+
+    case GameState::GameOver:
+      break;
+  }
+
+  arduboy.display();
+}
+
+void oldLoop() {
   
   if (!d_run && arduboy.pressed(A_BUTTON)) {
     arduboy.clear();
