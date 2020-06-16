@@ -158,7 +158,6 @@ void loop() {
       sound.tone(174, 200);
     }
 
-    d_tumble_t;
     if (d_jump > -4) {
       d_jump -= 1;
       ox -= 1;
