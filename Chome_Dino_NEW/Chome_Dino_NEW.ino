@@ -20,9 +20,6 @@ ArduboyTones sound(arduboy.audio.enabled);
 // frame counter
 unsigned int frame = 0;
 
-// general use string buffer
-char text[16];
-
 // distance ran
 int d;
 int delta;
@@ -175,8 +172,7 @@ void loop() {
 
   // hud
   arduboy.setCursor(50, 6);
-  sprintf(text,"%d",d);
-  arduboy.print(text);
+  arduboy.print(d);
   // parallax clouds
   arduboy.drawBitmap(128 -(d%128),cloud_1_y,cloud_1,20,10,WHITE);
 
