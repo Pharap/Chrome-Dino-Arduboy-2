@@ -33,23 +33,22 @@ int countdownx = 64;
 int countdowny = 30;
 int wait = 750;
 
-void setup()
+void reset()
 {
-  arduboy.begin();
-  arduboy.setFrameRate(60);
   d = 0;
   delta = 0;
-
   cloud_1_y = 2;
-
   d_jump = 0;
   d_jump_t = 0;
-
   d_tumble_t = 0;
   d_run = 0;
-
   ox = 130;
-  
+}
+
+void restart()
+{
+  reset();
+
   arduboy.clear();
   arduboy.setCursor(32, 20);
   arduboy.println("Chrome Dino");
@@ -60,6 +59,12 @@ void setup()
   arduboy.display();
   
   while (!arduboy.pressed(A_BUTTON)) {}
+}
+
+void setup()
+{
+  arduboy.begin();
+  restart();
 }
 
 void loop() {
@@ -94,7 +99,7 @@ void loop() {
     arduboy.print(d);
     arduboy.display();
     delay(2500);
-    setup();
+    restart();
     return;
     }
 
