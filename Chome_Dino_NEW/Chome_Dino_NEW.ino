@@ -3,7 +3,6 @@
 #include <Arduboy2.h>
 #include <ArduboyTones.h>
 
-
 #include "cactus_1.h"
 #include "cloud_1.h"
 #include "dino_leg_0.h"
@@ -28,20 +27,16 @@ unsigned int frame = 0;
 char text[16];
 
 // distance ran
-int d, delta;
-
+int d;
+int delta;
 int cloud_1_y;
-
-int d_jump, d_jump_t;
-
+int d_jump;
+int d_jump_t;
 int d_run;
 int d_tumble_t;
-
 int ox;
-
 int countdownx = 64;
 int countdowny = 30;
-
 int wait = 750;
 
 void setup()
