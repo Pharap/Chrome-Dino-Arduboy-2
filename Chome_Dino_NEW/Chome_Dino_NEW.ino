@@ -26,7 +26,7 @@ int delta;
 int cloud_1_y;
 int d_jump;
 int d_jump_t;
-int d_run;
+bool d_run;
 int d_tumble_t;
 int ox;
 int countdownx = 64;
@@ -41,7 +41,7 @@ void reset()
   d_jump = 0;
   d_jump_t = 0;
   d_tumble_t = 0;
-  d_run = 0;
+  d_run = false;
   ox = 130;
 }
 
@@ -86,7 +86,7 @@ void loop() {
     arduboy.display();
     delay(wait);
     arduboy.clear();
-    d_run = 1;
+    d_run = true;
   }
 
   if (d_tumble_t == 1) {
@@ -167,7 +167,7 @@ void loop() {
       d_jump -= 1;
       ox -= 1;
     } else {
-      d_run = 0;
+      d_run = false;
     }
   }
 
