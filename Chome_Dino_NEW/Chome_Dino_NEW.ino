@@ -89,6 +89,8 @@ void loop()
   switch (gameState)
   {
     case GameState::TitleScreen:
+      updateTitleScreen();
+      drawTitleScreen();
       break;
 
     case GameState::CountDown:
@@ -102,6 +104,24 @@ void loop()
   }
 
   arduboy.display();
+}
+
+void updateTitleScreen()
+{
+  if(arduboy.justPressed(A_BUTTON))
+    gameState = GameState::Gameplay;
+}
+
+void drawTitleScreen()
+{
+  arduboy.setCursor(32, 20);
+  arduboy.println("Chrome Dino");
+
+  tinyfont.setCursor(49, 30);
+  tinyfont.print("v0.1.0");
+
+  arduboy.setCursor(18, 40);
+  arduboy.println("Press A To Start");
 }
 
 void oldLoop() {
