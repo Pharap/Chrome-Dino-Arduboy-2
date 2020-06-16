@@ -25,7 +25,7 @@ enum class GameState
   GameOver,
 };
 
-GameState gameState = TitleScreen;
+GameState gameState = GameState::TitleScreen;
 
 // frame counter
 unsigned int frame = 0;
