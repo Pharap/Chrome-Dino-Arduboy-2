@@ -126,15 +126,16 @@ void drawTitleScreen()
   arduboy.println("Press A To Start");
 }
 
-void updateGameOver
+void updateGameOver()
 {
   if(arduboy.justPressed(A_BUTTON))
   {
+    reset();
     gameState = GameState::TitleScreen;
   }
 }
 
-void drawGameOver
+void drawGameOver()
 {
   arduboy.setCursor(35, 20);
   arduboy.println("Game Over!");
