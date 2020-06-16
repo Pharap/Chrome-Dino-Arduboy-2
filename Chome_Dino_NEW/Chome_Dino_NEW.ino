@@ -152,7 +152,7 @@ void loop() {
     sound.tone(25, 100);
   }
 
-  if (d_tumble_t) {
+  if (d_tumble_t != 0) {
     if (d_tumble_t == 1) {
     } else if (d_tumble_t == 6) {
       sound.tone(174, 200);
