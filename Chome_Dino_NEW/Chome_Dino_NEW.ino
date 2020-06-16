@@ -58,6 +58,7 @@ void reset()
 void setup()
 {
   arduboy.begin();
+  reset();
 }
 
 void loop()
@@ -96,7 +97,10 @@ void loop()
 void updateTitleScreen()
 {
   if(arduboy.justPressed(A_BUTTON))
+  {
     gameState = GameState::Gameplay;
+    d_run = true;
+  }
 }
 
 void drawTitleScreen()
