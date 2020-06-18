@@ -209,6 +209,15 @@ void updateGameplay()
   }
 }
 
+void drawGameplay()
+{
+  drawHUD();
+  drawClouds();
+  drawTerrain();
+  drawObstacles();
+  drawDino();
+}
+
 void drawHUD()
 {
   arduboy.setCursor(50, 6);
@@ -274,13 +283,4 @@ void drawDino()
       arduboy.drawBitmap(0, dy+16, dino_leg_0, 20, 8, WHITE);
     }
   }
-}
-
-void drawGameplay()
-{
-  drawHUD();
-  drawClouds();
-  drawTerrain();
-  drawObstacles();
-  drawDino();
 }
