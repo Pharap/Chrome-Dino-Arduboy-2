@@ -259,7 +259,7 @@ void drawDino()
   // tumbles!
   if (d_tumble_t != 0)
   {
-    arduboy.drawBitmap(0, dy+3, dino_tumble, 30, 18, WHITE);
+    arduboy.drawBitmap(0, dy + 3, dino_tumble, 30, 18, WHITE);
   }
   // runs!
   else
@@ -280,7 +280,7 @@ void drawDino()
     }
     else
     {
-      arduboy.drawBitmap(0, dy+16, dino_leg_0, 20, 8, WHITE);
+      arduboy.drawBitmap(0, dy + 16, dino_leg_0, 20, 8, WHITE);
     }
   }
 }
