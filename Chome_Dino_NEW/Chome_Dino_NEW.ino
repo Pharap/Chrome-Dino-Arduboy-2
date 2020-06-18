@@ -224,18 +224,24 @@ void drawClouds()
     cloud_1_y = random(0,10);
 }
 
+void drawTerrain()
+{
+  if (d_jump > 4)
+  {
+    arduboy.drawLine(0, 60, 127, 60, WHITE);
+  }
+  else
+  {
+    arduboy.drawLine(0, 60, 3, 60, WHITE);
+    arduboy.drawLine(12, 60, 127, 60, WHITE); 
+  }
+}
+
 void drawGameplay()
 {
   drawHUD();
   drawClouds();
-
-  // terrain
-  if (d_jump > 4) {
-    arduboy.drawLine(0,60,127,60,WHITE);
-  } else {
-    arduboy.drawLine(0,60,3,60,WHITE);
-    arduboy.drawLine(12,60,127,60,WHITE); 
-  }
+  drawTerrain();
 
   // obstacles
   arduboy.drawBitmap(ox,40,cactus_1,12,24,WHITE);
