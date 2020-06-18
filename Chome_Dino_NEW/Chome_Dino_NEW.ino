@@ -242,31 +242,45 @@ void drawObstacles()
   arduboy.drawBitmap(ox, 40, cactus_1, 12, 24, WHITE);
 }
 
+void drawDino()
+{
+  // dino
+  int dy = (40 - d_jump);
+
+  // tumbles!
+  if (d_tumble_t != 0)
+  {
+    arduboy.drawBitmap(0, dy+3, dino_tumble, 30, 18, WHITE);
+  }
+  // runs!
+  else
+  {
+    arduboy.drawBitmap(0, dy, dino_top, 20, 18, WHITE);
+  
+    // Run, Dino, Run!
+    if (d_run && !d_jump)
+    {
+      if ((frame % 8) / 4)
+      {
+        arduboy.drawBitmap(0, dy + 16, dino_leg_1, 20, 8, WHITE);
+      }
+      else
+      {
+        arduboy.drawBitmap(0, dy + 16, dino_leg_2, 20, 8, WHITE);
+      }
+    }
+    else
+    {
+      arduboy.drawBitmap(0, dy+16, dino_leg_0, 20, 8, WHITE);
+    }
+  }
+}
+
 void drawGameplay()
 {
   drawHUD();
   drawClouds();
   drawTerrain();
   drawObstacles();
-
-  // dino
-  int dy = 40-d_jump;
-  // tumbles!
-  if (d_tumble_t != 0) {
-    arduboy.drawBitmap(0,dy+3,dino_tumble,30,18,WHITE);
-  // runs!
-  } else {
-    arduboy.drawBitmap(0,dy,dino_top,20,18,WHITE);
-  
-    // Run, Dino, Run!
-    if (d_run && !d_jump) {
-      if ((frame%8)/4) {
-        arduboy.drawBitmap(0,dy+16,dino_leg_1,20,8,WHITE);
-      } else {
-        arduboy.drawBitmap(0,dy+16,dino_leg_2,20,8,WHITE);
-      }
-    } else {
-      arduboy.drawBitmap(0,dy+16,dino_leg_0,20,8,WHITE);
-    }
-  }
+  drawDino();
 }
