@@ -209,11 +209,16 @@ void updateGameplay()
   }
 }
 
-void drawGameplay()
+void drawHUD()
 {
-  // hud
   arduboy.setCursor(50, 6);
   arduboy.print(d);
+}
+
+void drawGameplay()
+{
+  drawHUD();
+
   // parallax clouds
   arduboy.drawBitmap(128 -(d%128),cloud_1_y,cloud_1,20,10,WHITE);
 
