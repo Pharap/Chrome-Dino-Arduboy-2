@@ -237,14 +237,17 @@ void drawTerrain()
   }
 }
 
+void drawObstacles()
+{
+  arduboy.drawBitmap(ox, 40, cactus_1, 12, 24, WHITE);
+}
+
 void drawGameplay()
 {
   drawHUD();
   drawClouds();
   drawTerrain();
-
-  // obstacles
-  arduboy.drawBitmap(ox,40,cactus_1,12,24,WHITE);
+  drawObstacles();
 
   // dino
   int dy = 40-d_jump;
