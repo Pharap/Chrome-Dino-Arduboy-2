@@ -14,7 +14,7 @@
 #include "dino_full.h"
 
 Arduboy2 arduboy;
-Tinyfont tinyfont = Tinyfont(arduboy.sBuffer, Arduboy2::width(), Arduboy2::height());
+Tinyfont tinyfont = Tinyfont(Arduboy2::sBuffer, Arduboy2::width(), Arduboy2::height());
 ArduboyTones sound(arduboy.audio.enabled);
 
 enum class GameState
