@@ -219,16 +219,15 @@ void drawClouds()
 {
   // parallax clouds
   arduboy.drawBitmap(128 - (d % 128), cloud_1_y, cloud_1, 20, 10, WHITE);
+
+  if ((d % 128) == 0)
+    cloud_1_y = random(0,10);
 }
 
 void drawGameplay()
 {
   drawHUD();
   drawClouds();
-
-  if (d%128 == 0) {
-    cloud_1_y = random(0,10);
-  }
 
   // terrain
   if (d_jump > 4) {
