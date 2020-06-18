@@ -215,12 +215,16 @@ void drawHUD()
   arduboy.print(d);
 }
 
+void drawClouds()
+{
+  // parallax clouds
+  arduboy.drawBitmap(128 - (d % 128), cloud_1_y, cloud_1, 20, 10, WHITE);
+}
+
 void drawGameplay()
 {
   drawHUD();
-
-  // parallax clouds
-  arduboy.drawBitmap(128 -(d%128),cloud_1_y,cloud_1,20,10,WHITE);
+  drawClouds();
 
   if (d%128 == 0) {
     cloud_1_y = random(0,10);
